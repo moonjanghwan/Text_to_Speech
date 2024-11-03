@@ -1,0 +1,264 @@
+/* 전체 레이아웃 */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+/* 타이틀 섹션 */
+header h1 {
+    color: #0d6efd;
+    margin-bottom: 2rem;
+}
+
+/* 화자 선택 섹션 */
+.voice-selection {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-select {
+    height: 42px;
+    border-color: #dee2e6;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-select:hover {
+    border-color: #0d6efd;
+}
+
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+}
+
+/* 내레이터 모드 버튼 그룹 */
+.btn-group {
+    width: 100%;
+}
+
+.btn-group .btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* 텍스트 입력 섹션 */
+.text-input textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    resize: vertical;
+    transition: all 0.2s ease-in-out;
+}
+
+.text-input textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+    outline: none;
+}
+
+/* 오디오 제어 섹션 */
+.audio-controls {
+    margin-top: 2rem;
+}
+
+.audio-controls .btn-group {
+    gap: 0.5rem;
+}
+
+.audio-controls .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    border-color: #146c43;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+/* 모달 스타일 */
+.modal-content {
+    border-radius: 8px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+}
+
+/* 텍스트 하이라이트 스타일 */
+.highlight {
+    background-color: #ffeb3b;
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+/* 알림 메시지 스타일 */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .voice-selection {
+        padding: 1rem;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 녹음 모달 스타일 */
+.modal-body .input-group {
+    margin-bottom: 0.5rem;
+}
+
+.modal-body .form-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+#directoryPath {
+    background-color: #f8f9fa;
+    cursor: default;
+}
+
+#recordingFileName.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* 녹음 설정 모달 스타일 */
+#recordingModal .modal-dialog {
+    max-width: 350px;
+}
+
+#recordingModal .modal-content {
+    border-radius: 8px;
+}
+
+#recordingModal .modal-header {
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+}
+
+#recordingModal .modal-title {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#recordingModal .modal-body {
+    padding: 1rem;
+}
+
+#recordingModal .form-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+#recordingModal .input-group {
+    margin-bottom: 0.25rem;
+}
+
+#recordingModal .modal-footer {
+    padding: 0.75rem 1rem;
+}
+
+#recordingFileName {
+    font-size: 0.9rem;
+}
+
+#recordingModal .btn {
+    font-size: 0.9rem;
+    padding: 0.375rem 0.75rem;
+}
+
+/* 텍스트 입력 영역 스타일 */
+.text-input {
+    position: relative;
+    line-height: 1.5;
+}
